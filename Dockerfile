@@ -16,5 +16,9 @@ RUN \
 
 FROM scratch
 COPY --from=hugobuilder /go/bin/hugo /hugo
+
+VOLUME /src
+WORKDIR /src
+
 ENTRYPOINT ["/hugo"]
 CMD ["--help"]
